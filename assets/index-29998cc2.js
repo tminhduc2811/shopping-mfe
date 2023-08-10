@@ -5593,26 +5593,29 @@ const __federation_var_productmfeApp = await __federation_method_getRemote("prod
  let ProductApplication = __federation_method_unwrapDefault(__federation_var_productmfeApp); 
 const __federation_var_cartmfeApp = await __federation_method_getRemote("cart-mfe" , "./App");
  let CartApplication = __federation_method_unwrapDefault(__federation_var_cartmfeApp); 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: /* @__PURE__ */ jsxRuntimeExports.jsx(Layout, {}),
-    children: [
-      {
-        index: true,
-        element: /* @__PURE__ */ jsxRuntimeExports.jsx(ProductApplication, {})
-      },
-      {
-        path: "cart",
-        element: /* @__PURE__ */ jsxRuntimeExports.jsx(CartApplication, {})
-      },
-      {
-        path: "about",
-        element: /* @__PURE__ */ jsxRuntimeExports.jsx(VueAboutApp, {})
-      }
-    ]
-  }
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: /* @__PURE__ */ jsxRuntimeExports.jsx(Layout, {}),
+      children: [
+        {
+          index: true,
+          element: /* @__PURE__ */ jsxRuntimeExports.jsx(ProductApplication, {})
+        },
+        {
+          path: "cart",
+          element: /* @__PURE__ */ jsxRuntimeExports.jsx(CartApplication, {})
+        },
+        {
+          path: "about",
+          element: /* @__PURE__ */ jsxRuntimeExports.jsx(VueAboutApp, {})
+        }
+      ]
+    }
+  ],
+  { basename: "/shopping-mfe/" }
+);
 
 const {RouterProvider} = await importShared('react-router-dom');
 function App() {
